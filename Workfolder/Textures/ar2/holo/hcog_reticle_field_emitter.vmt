@@ -1,0 +1,28 @@
+"UnlitTwotexture"
+{
+	"$basetexture"	"models\weapons\v_iRifle\holo\hcog_reticle_field_emitter_col"
+	"$texture2"	"models\weapons\v_iRifle\holo\combine_fenceglow2"
+
+	"$model"		"1"
+	"$additive"	"1"
+
+	"Proxies"
+	{
+		"GaussianNoise"
+		{
+			"minVal" .69
+			"maxVal" 1	
+ 			"mean" .7
+			"halfwidth" .3
+			"resultVar" "$alpha"
+		}
+
+		"TextureScroll"
+		{
+			"texturescrollvar" "$texture2transform"
+			"texturescrollrate" 1
+			"texturescrollangle" 90
+		}
+
+	}
+}
