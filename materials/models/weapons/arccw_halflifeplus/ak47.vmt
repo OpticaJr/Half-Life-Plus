@@ -6,7 +6,7 @@ VertexlitGeneric
 	"$phongexponenttexture"     "models\weapons\arccw_halflifeplus\ak47_r"
 	"$phongwarptexture"			"models\weapons\arccw_halflifeplus\shared\phongwarp_metallic" 
 	"$phongboost"               "0.5"
-	"$phongfresnelranges"       "[2 3 4]"
+	"$phongfresnelranges"       "[1 4 8]"
 	"$phongtint"                "[0.925 0.925 0.9]"
 	"$phongexponent"            "50"
 
