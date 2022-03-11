@@ -215,7 +215,7 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     end
-end
+}
 
 SWEP.ExtraSightDist = 10
 SWEP.GuaranteeLaser = true
