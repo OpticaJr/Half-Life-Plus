@@ -41,8 +41,6 @@ SWEP.ShootEntity = nil
 SWEP.MuzzleVelocity = 650
 SWEP.PhysBulletMuzzleVelocity = 650
 
-SWEP.BodyDamageMults = ArcCW.UC.BodyDamageMults
-
 -- Mag size --
 
 SWEP.ChamberSize = 1
@@ -192,7 +190,7 @@ SWEP.AttachmentElements = {
         VMElements = {
             {
                 Model = "models/weapons/arccw/atts/mount_ak.mdl",
-                Bone = "v_weapon.AK47_Parent",
+                Bone = "DustCover",
                 Scale = Vector(-1, -1, 1),
                 Offset = {
                     pos = Vector(0, -6.723, -2.04),
@@ -213,9 +211,6 @@ SWEP.AttachmentElements = {
     },
 }
 
-SWEP.Hook_ModifyBodygroups = function(wep, data)
-    end
-}
 
 SWEP.ExtraSightDist = 10
 SWEP.GuaranteeLaser = true
@@ -240,25 +235,18 @@ SWEP.Attachments = {
         CorrectivePos = Vector(0, 0, -0.0),
         CorrectiveAng = Angle(-1.9, 180.15, 0),
         VMScale = Vector(1, 1, 1),
-        -- SlideAmount = {
-        --     vmin = Vector(0, 2-1, 4.55),
-        --     vmax = Vector(0, 2+0.5, 4.55),
-        -- },
---        RequireFlags = {"cover_rail"},
---        HideIfBlocked = true,
-        -- InstalledEles = {"optic_rail"},
     },
     {
         PrintName = "Barrel",
         DefaultAttName = "Factory Barrel",
-        DefaultAttIcon = Material("entities/att/ur_ak/barrel/stock_barrel.png", "mips smooth"),
+        Bone = "Barrel"
         Slot = "hlp_ak_barrel",
     },
     {
         PrintName = "Muzzle",
         DefaultAttName = "Factory Muzzle",
         Slot = {"muzzle"},
-        Bone = "tag_weapon",
+        Bone = "Barrel",
         VMScale = Vector(1.2, 1.2, 1.2),
         WMScale = VMScale,
         Offset = {
@@ -269,14 +257,14 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Magazine",
-        Slot = {"hlp_ak_mag"},
+        Slot = "hlp_ak_mag",
+        Bone = "Mag",
         DefaultAttName = "30-Round Mag",
-        DefaultAttIcon = Material("entities/att/ur_ak/magazines/762_30.png", "mips smooth"),
     },
     {
         PrintName = "Underbarrel",
         Slot = {"foregrip","ubgl"},
-        Bone = "tag_weapon",
+        Bone = "Body",
         Offset = {
             vpos = Vector(0,12, 1.9),
             vang = Angle(90, -90, -90),
@@ -290,8 +278,8 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Tactical",
-        Slot = {"tac"},
-        Bone = "tag_weapon",
+        Slot = "tac",
+        Bone = "Body",
         Offset = {
             vpos = Vector(-1, 10.5, 2.8),
             vang = Angle(-90, 270, 0),
@@ -300,13 +288,13 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Grip Type",
-        Slot = {"grip"},
+        Slot = "grip",
         DefaultAttName = "Type 3 Grip",
-        DefaultAttIcon = Material("entities/att/ur_ak/grip_3.png", "mips smooth"),
     },
     {
         PrintName = "Stock",
-        Slot = {"stock"},
+        Slot = "stock",
+        Bone = "Stock"
         DefaultAttName = "Type 3 Stock",
         DefaultAttIcon = Material(nil, "mips smooth"),
     },
@@ -317,9 +305,9 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Charm",
-        Slot = {"charm"},
+        Slot = "charm",
         FreeSlot = true,
-        Bone = "tag_weapon",
+        Bone = "Body",
         Offset = {
             vpos = Vector(0.6, 2, 2.25),
             vang = Angle(90, -90, -90),
